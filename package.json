@@ -1,6 +1,6 @@
 {
   "name": "@danalytica/charteye-tradingview-plugin",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Unlock the power of AI-driven technical analysis directly within TradingView's Advanced Charts with the ChartEye TradingView Plugin.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

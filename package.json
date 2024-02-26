@@ -1,0 +1,22 @@
+{
+  "name": "@danalytica/charteye-tradingview-plugin",
+  "version": "1.0.0-beta.1",
+  "description": "Unlock the power of AI-driven technical analysis directly within TradingView's Advanced Charts with the ChartEye TradingView Plugin.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Danalytica/charteye-tradingview-plugin-dist.git"
+  },
+  "author": "Boye Oomens <boye@danalytica.io>",
+  "license": "MIT",
+  "main": "charteye.js",
+  "module": "charteye.js",
+  "types": "types/charteye.d.ts",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Danalytica/charteye-tradingview-plugin-dist/issues"
+  },
+  "homepage": "https://github.com/Danalytica/charteye-tradingview-plugin#readme"
+}

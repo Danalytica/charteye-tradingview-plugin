@@ -1,1 +1,1 @@
-export{C as Charteye,a as setLocale}from"./charteye-DYJKgBqG.js";
+export{C as ChartEye,a as setLocale}from"./charteye-DYJKgBqG.js";

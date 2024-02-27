@@ -1,19 +1,18 @@
 import { CharteyeDrawer } from './charteye-drawer';
-// @ts-ignore
-import { IChartingLibraryWidget } from 'types/charting_library';
+import { IChartingLibraryWidget } from './charting_library';
 
 export const setLocale: ((newLocale: string) => Promise<void>) & {
   _LIT_LOCALIZE_SET_LOCALE_?: never;
 };
 export class ChartEye {
-  constructor(tvWidget: any, options: any);
+  constructor(tvWidget: IChartingLibraryWidget, options: any);
   /**
    * TradingView widget instance
    * @see https://www.tradingview.com/charting-library-docs/latest/core_concepts/widget-methods
    * @type {IChartingLibraryWidget}
    * @private
    */
-  private _tvWidget: IChartingLibraryWidget;
+  private _tvWidget;
   /**
    * TradingView widget iFrame
    * @private
@@ -36,6 +35,12 @@ export class ChartEye {
    * @private
    */
   private _isolated;
+  /**
+   * Whether the plugin is isolated within the iframe
+   * @type {boolean}
+   * @private
+   */
+  private _cdnUrl;
   /**
    * Client host
    * @type {string}
@@ -101,6 +106,11 @@ export class ChartEye {
    * @return {boolean}
    */
   get isolated(): boolean;
+  /**
+   * Get ChartEye CDN URL
+   * @return {boolean}
+   */
+  get cdnUrl(): boolean;
   /**
    * Set ChartEye API host
    * @return {string}
@@ -178,9 +188,25 @@ export class ChartEye {
   get apiKey(): any;
   /**
    * ChartEye options
-   * @return {*}
+   * @return {{ apiKey: string, debug: boolean, cdnUrl: string, drawer: { resizable: boolean, width: string, tooltips: boolean }, button: { iconOnly: boolean, align: string }, isolated: boolean, apiHost: string, slug: string }}
    */
-  get options(): any;
+  get options(): {
+    apiKey: string;
+    debug: boolean;
+    cdnUrl: string;
+    drawer: {
+      resizable: boolean;
+      width: string;
+      tooltips: boolean;
+    };
+    button: {
+      iconOnly: boolean;
+      align: string;
+    };
+    isolated: boolean;
+    apiHost: string;
+    slug: string;
+  };
   /**
    * TradingView widget instance
    * @return {*}
@@ -285,6 +311,12 @@ export class ChartEye {
    * @return {Promise<unknown>}
    */
   addScript(src: any, doc?: Document, attributes?: {}): Promise<unknown>;
+  /**
+   * Loads ChartEye web component
+   * It can be loaded either locally or from a CDN URL
+   * @return {Promise}
+   */
+  loadWebComponent(): Promise<any>;
   /**
    * Inserts ChartEye web component and wraps TV widget
    * @return {void}

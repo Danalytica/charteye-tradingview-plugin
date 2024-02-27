@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Danalytica/charteye-tradingview-plugin-dist.git"
+    "url": "git+ssh://git@github.com/Danalytica/charteye-tradingview-plugin.git"
   },
   "author": "Boye Oomens <boye@danalytica.io>",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "types": "types/charteye.d.ts",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/Danalytica/charteye-tradingview-plugin-dist/issues"
+    "url": "https://github.com/Danalytica/charteye-tradingview-plugin/issues"
   },
   "homepage": "https://github.com/Danalytica/charteye-tradingview-plugin#readme"
 }

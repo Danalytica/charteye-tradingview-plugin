@@ -5,7 +5,7 @@ export const setLocale: ((newLocale: string) => Promise<void>) & {
   _LIT_LOCALIZE_SET_LOCALE_?: never;
 };
 export class ChartEye {
-  constructor(tvWidget: IChartingLibraryWidget, options: any);
+  constructor(tvWidget: any, options: any);
   /**
    * TradingView widget instance
    * @see https://www.tradingview.com/charting-library-docs/latest/core_concepts/widget-methods
@@ -95,6 +95,12 @@ export class ChartEye {
    * @private
    */
   private _screenshotData;
+  /**
+   * On component ready callback
+   * @type {null|function(CharteyeDrawer): void}
+   * @private
+   */
+  private _componentReady;
   /**
    * Locale
    * @type {string}
@@ -233,12 +239,22 @@ export class ChartEye {
    */
   get iframeDoc(): any;
   /**
+   * Get on component ready callback
+   * @return {(function(CharteyeDrawer): void)|null}
+   */
+  get componentReady(): (arg0: CharteyeDrawer) => void;
+  /**
    * Logs message and given arguments if debug mode is enabled
    * @param message
    * @param args
    * @return {void|null}
    */
   log(message: any, ...args: any[]): void | null;
+  /**
+   * Set on component ready callback
+   * @param callback
+   */
+  onComponentReady(callback: any): void;
   /**
    * Returns ChartEye dropdown items
    * @return {[{title: string, onSelect: any},{title: string, onSelect: (function(): *)}]}
